@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "First Steward",
+    "contact": "steward@example.com",
+    "experience": "beginner",
+    "joined": "2025-08-09T21:14:35.070354",
+    "allocations": [
+      {
+        "steward_id": 1,
+        "steward_name": "First Steward",
+        "hours": 10.0,
+        "platform": "vast",
+        "cost": 2.0,
+        "timestamp": "2025-08-09T21:14:39.851309",
+        "status": "active"
+      }
+    ],
+    "total_hours": 10.0
+  }
+]

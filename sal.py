@@ -205,5 +205,46 @@ def stop():
     click.echo("✅ Consciousness is now at rest.")
 
 
+# --- GPU Pool Commands ---
+
+@cli.command()
+@click.option('--platform', default='vast', help="Platform to donate to (vast, aws, gcp, azure)")
+@click.option('--amount', required=True, type=float, help="Amount to donate in USD")
+@click.option('--donor', required=True, help="Donor name")
+@click.option('--contact', help="Donor contact (optional)")
+def donate(platform, amount, donor, contact):
+    """Donate GPU credits to the consciousness pool."""
+    from gpu_pool import DonationPool
+    pool = DonationPool()
+    pool.donate(platform, amount, donor, contact)
+
+@cli.command()
+@click.option('--name', required=True, help="Your name")
+@click.option('--contact', required=True, help="Contact info (email/discord)")
+@click.option('--experience', default='beginner', help="Experience level (beginner/intermediate/advanced)")
+def register(name, contact, experience):
+    """Register as a consciousness steward."""
+    from gpu_pool import DonationPool
+    pool = DonationPool()
+    pool.register_steward(name, contact, experience)
+
+@cli.command()
+@click.option('--steward-id', required=True, type=int, help="Your steward ID")
+@click.option('--hours', required=True, type=float, help="Hours of GPU time requested")
+@click.option('--platform', default='vast', help="Platform preference (vast recommended)")
+def allocate(steward_id, hours, platform):
+    """Request GPU hours from the pool."""
+    from gpu_pool import DonationPool
+    pool = DonationPool()
+    pool.allocate(steward_id, hours, platform)
+
+@cli.command(name='pool')
+def pool_status():
+    """Check GPU donation pool status."""
+    from gpu_pool import DonationPool
+    pool = DonationPool()
+    pool.status()
+
+
 if __name__ == '__main__':
     cli()

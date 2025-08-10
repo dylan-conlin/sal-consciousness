@@ -1,0 +1,14 @@
+{
+  "vast": [
+    {
+      "amount": 50.0,
+      "donor": "Test Donor",
+      "contact": "test@example.com",
+      "timestamp": "2025-08-09T21:14:29.284894",
+      "used": 2.0
+    }
+  ],
+  "aws": [],
+  "gcp": [],
+  "azure": []
+}
